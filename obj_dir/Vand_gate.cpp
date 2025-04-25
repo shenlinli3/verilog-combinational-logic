@@ -48,7 +48,7 @@ void Vand_gate::eval() {
             Verilated::debug(1);
             __Vchange = _change_request(vlSymsp);
             Verilated::debug(__Vsaved_debug);
-            VL_FATAL_MT("testbench.sv", 1, "",
+            VL_FATAL_MT("tests/testbench.sv", 1, "",
                 "Verilated model didn't converge\n"
                 "- See DIDNOTCONVERGE in the Verilator manual");
         } else {
@@ -73,7 +73,7 @@ void Vand_gate::_eval_initial_loop(Vand_gate__Syms* __restrict vlSymsp) {
             Verilated::debug(1);
             __Vchange = _change_request(vlSymsp);
             Verilated::debug(__Vsaved_debug);
-            VL_FATAL_MT("testbench.sv", 1, "",
+            VL_FATAL_MT("tests/testbench.sv", 1, "",
                 "Verilated model didn't DC converge\n"
                 "- See DIDNOTCONVERGE in the Verilator manual");
         } else {
@@ -96,7 +96,7 @@ void Vand_gate::_initial__TOP__1(Vand_gate__Syms* __restrict vlSymsp) {
     vlTOPp->testbench__DOT__B = 1U;
     VL_WRITEF("Time: %0t | A: 1, B: 1, Y: %b\n",64,
               VL_TIME_Q(),1,(IData)(vlTOPp->testbench__DOT__Y));
-    VL_FINISH_MT("testbench.sv", 25, "");
+    VL_FINISH_MT("tests/testbench.sv", 25, "");
     vlTOPp->testbench__DOT__Y = 1U;
 }
 
@@ -141,7 +141,7 @@ VL_INLINE_OPT QData Vand_gate::_change_request(Vand_gate__Syms* __restrict vlSym
     // Change detection
     QData __req = false;  // Logically a bool
     __req |= ((vlTOPp->testbench__DOT__Y ^ vlTOPp->__Vchglast__TOP__testbench__DOT__Y));
-    VL_DEBUG_IF( if(__req && ((vlTOPp->testbench__DOT__Y ^ vlTOPp->__Vchglast__TOP__testbench__DOT__Y))) VL_DBG_MSGF("        CHANGE: testbench.sv:4: testbench.Y\n"); );
+    VL_DEBUG_IF( if(__req && ((vlTOPp->testbench__DOT__Y ^ vlTOPp->__Vchglast__TOP__testbench__DOT__Y))) VL_DBG_MSGF("        CHANGE: tests/testbench.sv:4: testbench.Y\n"); );
     // Final
     vlTOPp->__Vchglast__TOP__testbench__DOT__Y = vlTOPp->testbench__DOT__Y;
     return __req;
