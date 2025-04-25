@@ -1,8 +1,4 @@
 # verilog-combinational-logic
-
-以下是丰富后的 `README.md` 内容，包含更详细的模块说明、调试流程、学习资源及项目管理规范，适合作为学习型项目的文档：
-
-
 # Verilog 组合逻辑电路设计与仿真项目  
 ## 项目概述  
 本项目聚焦于 **Verilog 组合逻辑电路** 的设计与验证，通过实现基础逻辑门（如与门）并搭建仿真环境，帮助学习者掌握以下核心技能：  
@@ -222,9 +218,9 @@ gtkwave ./waveforms/waveform.vcd
 
 
 ## 联系与支持  
-- **作者**：Your Name（可替换为实际信息）  
-- **邮箱**：your-email@example.com  
-- **项目地址**：https://github.com/your-username/verilog-combinational-logic  
+- **作者**：shenlin li
+- **邮箱**：shenlinli3@163.com
+- **项目地址**：https://github.com/shenlinli3/verilog-combinational-logic/
 
 
 通过以上内容，学习者可清晰了解项目结构、仿真流程及扩展方向，同时掌握组合逻辑设计的核心调试技巧。建议按照 **基础仿真 → 波形分析 → 代码扩展 → 自动化测试** 的路径逐步深入学习。
