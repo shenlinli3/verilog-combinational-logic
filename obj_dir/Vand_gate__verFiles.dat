@@ -1,0 +1,13 @@
+# DESCRIPTION: Verilator output: Timestamp data for --skip-identical.  Delete at will.
+C "-Wall --cc and_gate.sv --exe testbench.sv"
+S   7484256  1205082  1745566339   170647309  1581264640           0 "/usr/bin/verilator_bin"
+S       108  1310801  1745567852   610674563  1745567852   610674563 "and_gate.sv"
+T      6161  1310805  1745567872   602674923  1745567872   602674923 "obj_dir/Vand_gate.cpp"
+T      2417  1310804  1745567872   602674923  1745567872   602674923 "obj_dir/Vand_gate.h"
+T      1704  1310807  1745567872   602674923  1745567872   602674923 "obj_dir/Vand_gate.mk"
+T       554  1310802  1745567872   601674923  1745567872   601674923 "obj_dir/Vand_gate__Syms.cpp"
+T       808  1310803  1745567872   601674923  1745567872   601674923 "obj_dir/Vand_gate__Syms.h"
+T       246  1310792  1745567872   602674923  1745567872   602674923 "obj_dir/Vand_gate__ver.d"
+T         0        0  1745567872   603674923  1745567872   603674923 "obj_dir/Vand_gate__verFiles.dat"
+T      1250  1310806  1745567872   602674923  1745567872   602674923 "obj_dir/Vand_gate_classes.mk"
+S       798  1310793  1745567870   423674884  1745567870   423674884 "testbench.sv"

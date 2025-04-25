@@ -141,7 +141,7 @@ VL_INLINE_OPT QData Vand_gate::_change_request(Vand_gate__Syms* __restrict vlSym
     // Change detection
     QData __req = false;  // Logically a bool
     __req |= ((vlTOPp->testbench__DOT__Y ^ vlTOPp->__Vchglast__TOP__testbench__DOT__Y));
-    VL_DEBUG_IF( if(__req && ((vlTOPp->testbench__DOT__Y ^ vlTOPp->__Vchglast__TOP__testbench__DOT__Y))) VL_DBG_MSGF("        CHANGE: testbench.sv:3: testbench.Y\n"); );
+    VL_DEBUG_IF( if(__req && ((vlTOPp->testbench__DOT__Y ^ vlTOPp->__Vchglast__TOP__testbench__DOT__Y))) VL_DBG_MSGF("        CHANGE: testbench.sv:4: testbench.Y\n"); );
     // Final
     vlTOPp->__Vchglast__TOP__testbench__DOT__Y = vlTOPp->testbench__DOT__Y;
     return __req;
