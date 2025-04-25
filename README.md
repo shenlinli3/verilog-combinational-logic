@@ -84,14 +84,15 @@ cd verilator-combinational-logic
 # 执行 Verilator 编译（指定文件路径与搜索目录）  
 verilator -Wall -I./tests/common \  # -I 指定模块搜索路径  
           --cc ./tests/common/and_gate.sv \  # 待编译的 RTL 模块  
-          --exe ./tests/testbench.sv \        # 测试平台文件  
+          --exe ./tests/testbench.sv \        # 测试平台文件 
+          --top-module testbench \        # 显式指定测试平台为顶层模块
           --trace  # 可选，启用波形生成（需配合 $dumpvars）  
 
 # 进入生成的 obj_dir 目录  
 cd obj_dir  
 
 # 编译可执行文件（基于生成的 Makefile）  
-make -f Vtestbench.mk  
+make -f Vtestbench.mk
 ```  
 
 ### 2. 运行仿真  
