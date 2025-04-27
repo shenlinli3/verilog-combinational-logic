@@ -82,12 +82,15 @@ gtkwave --version    # 可选，验证波形工具
 cd verilator-combinational-logic  
 
 # 执行 Verilator 编译（指定文件路径与搜索目录）  
-verilator -Wall -I./tests/common \  # -I 指定模块搜索路径  
-          --cc ./tests/common/and_gate.sv \  # 待编译的 RTL 模块  
-          --exe ./tests/testbench.sv \        # 测试平台文件 
-          --top-module testbench \        # 显式指定测试平台为顶层模块
-          --trace  # 可选，启用波形生成（需配合 $dumpvars）  
-
+# verilator -Wall -I./tests/common --cc --exe ./tests/testbench.sv ./tests/common/and_gate.sv --top-module testbench --trace --main
+verilator -Wall -I./tests/common \            # -I 指定模块搜索路径  
+          --cc ./tests/common/and_gate.sv \   # 待编译的 RTL 模块  
+          ./tests/testbench.sv \              # 测试平台文件 
+          --top-module testbench \            # 显式指定测试平台为顶层模块
+          --trace \                           # 可选，启用波形生成（需配合 $dumpvars）  
+          --timing \                          # 使用 --timing 进行精确时序模拟
+          --main 
+          
 # 进入生成的 obj_dir 目录  
 cd obj_dir  
 
@@ -137,7 +140,7 @@ gtkwave ./waveforms/waveform.vcd
 ## 调试与排错技巧  
 ### 1. 常见错误类型  
 | 错误现象                          | 可能原因                          | 解决方法                          |  
-|-----------------------------------|-----------------------------------|-----------------------------------|  
+|-----------------------------------|-------------------------------- -|-----------------------------------|  
 | `%Error: Cannot find file`        | 文件路径错误                      | 检查 `-I` 路径与文件路径是否正确 |  
 | `%Warning: UNOPTFLAT`             | 组合逻辑反馈回路                  | 检查模块是否存在循环依赖          |  
 | 仿真输出异常                      | 测试向量错误或 RTL 逻辑错误       | 打印中间变量，对比真值表          |  

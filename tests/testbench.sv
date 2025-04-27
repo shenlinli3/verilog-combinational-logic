@@ -8,23 +8,26 @@ module testbench;
     and_gate uut (.A(A), .B(B), .Y(Y)); 
 
     initial begin
-        // 初始化并打印初始状态
-        A = 0; B = 0; 
+    // 初始化
+        A = 0; B = 0;
+        $timeformat(-12, 0, " ps", 20); // 显式设置时间格式
         output_and_display();
 
-        // 变更输入并打印输出
-        A = 0; B = 1; 
+        // 变更输入并触发评估
+        A = 0; B = 1;
+        $eval(); // 关键：手动触发组合逻辑评估
         output_and_display();
 
-        A = 1; B = 0; 
+        A = 1; B = 0;
+        $eval();
         output_and_display();
 
-        A = 1; B = 1; 
+        A = 1; B = 1;
+        $eval(); // 触发评估后 Y 应更新为 1
         output_and_display();
-        
-        $finish; // 结束仿真
+
+        $finish;
     end
-
     // 自定义任务以输出状态
     task output_and_display();
         begin
